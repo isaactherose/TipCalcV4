@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.tipcalcv4.MainActivity$PlaceholderFragment" >
+
+    
+
+    <EditText
+        android:id="@+id/topEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Enter Total Bill Amount" />
+
+    <Button
+        android:id="@+id/fifteenPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tenPercent"
+        android:layout_centerHorizontal="true"
+        android:onClick="fifteenPercentCalculate"
+        android:text="15%" />
+
+    <Button
+        android:id="@+id/tenPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/twentyPercent"
+        android:layout_alignBottom="@+id/twentyPercent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:onClick="tenPercentCalculate"
+        android:text="10%" />
+
+    <Button
+        android:id="@+id/twentyPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/topEdit"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="60dp"
+        android:onClick="twentyPercentCalculate"
+        android:text="20%" />
+
+    <TextView
+        android:id="@+id/tipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="The tip is:"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/tipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentRight="true"
+        android:layout_toLeftOf="@+id/fifteenPercent"
+        android:textSize="30dp"
+         />
+
+</RelativeLayout>
