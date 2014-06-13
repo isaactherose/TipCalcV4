@@ -1,10 +1,14 @@
 package com.example.tipcalcv4;
+//test git 
+import java.text.DecimalFormat;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,6 +22,9 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
          topEdit = (EditText) findViewById(R.id.topEdit);
         tipAmount = (TextView) findViewById(R.id.tipAmount);
+        topEdit.setInputType(InputType.TYPE_CLASS_NUMBER);
+        topEdit.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
         
         
         
@@ -25,12 +32,21 @@ public class MainActivity extends ActionBarActivity {
         
 
     }
+    
+    String roundTwoDecimals(double d)
+    {
+
+        DecimalFormat twoDForm = new DecimalFormat("#.00");
+        return String.valueOf(twoDForm.format(d));
+    }
+      
     public void tenPercentCalculate(View v){
     	//fire when ten percent button clicked
     	double percent = .1;
     	double number = (Double.parseDouble(topEdit.getText().toString()))*percent;
     	//fire when ten percent button clicked
-    	tipAmount.setText("$" + number);
+    	//double roundedMoney = roundTwoDecimals(number);
+    	tipAmount.setText("$" + roundTwoDecimals(number));
     	 
     }
     public void fifteenPercentCalculate(View v){
@@ -39,14 +55,14 @@ public class MainActivity extends ActionBarActivity {
     	double percent = .15;
     	double number = (Double.parseDouble(topEdit.getText().toString()))*percent;
     	//fire when ten percent button clicked
-    	tipAmount.setText("$" + number);
+    	tipAmount.setText("$" + roundTwoDecimals(number));
 
     }
     public void twentyPercentCalculate(View v){
     	double percent = .2;
     	double number = (Double.parseDouble(topEdit.getText().toString()))*percent;
     	//fire when ten percent button clicked
-    	tipAmount.setText("$" + number);
+    	tipAmount.setText("$" + roundTwoDecimals(number));
     }
 
 
